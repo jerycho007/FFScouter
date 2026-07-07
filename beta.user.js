@@ -4781,6 +4781,7 @@ player_id: Number.parseInt(match.groups["player_id"], 10),
             cell.style.textShadow = "1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000";
             let highestIndex = 1;
             try {
+              var distrib = data.distribution.distribution_human.split(" ");
               var distrib2 = [data.spies[0]["strength"], data.spies[0]["defense"], data.spies[0]["speed"], data.spies[0]["dexterity"]];
               highestIndex = distrib2.reduce((maxIdx, val, idx, arr) => +val > +arr[maxIdx] ? idx : maxIdx, 0) + 1;
               if (parseFloat(distrib[1].replace("(", "")) >= ffconfig.color_estimates_threshold) {
