@@ -7161,7 +7161,7 @@ jsx(
 jsx("label", { htmlFor: "color-estimates-toggle", children: "Color estimates based on whore stat" })
                 ] }),
 jsxs("div", { className: cls.cell, children: [
-jsx("label", { htmlFor: "color-estimates-threshold", children: "Max FF:" }),
+jsx("label", { htmlFor: "color-estimates-threshold", children: "Whore stat % Threshold for color:" }),
 jsx(
                     "input",
                     {
