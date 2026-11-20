@@ -271,6 +271,18 @@ export async function apply_ff_columns(membersList: HTMLElement) {
           ? extract_bs_estimate_human(data)
           : format_ff_score(data);
         const bg_color = get_ff_colour(data);
+        if (data.distribution) {
+          const highStat = data.distribution.distribution_human.split(' ')[0];
+          const highStatPercentage = data.distribution.distribution_human.split(' ')[1];
+          if (highStat && Number.parseInt(highStatPercentage.replace(/[()]/g, '').trim(), 10) > 30) {
+            switch (highStat) {
+              case "STR": bg_color = "#ad7c5c"; break;
+              case "DEX": bg_color = "#ae67bb"; break;
+              case "DEF": bg_color = "#6ea9a9"; break;
+              case "SPD": bg_color = "#807b54"; break;
+            }
+          }
+        }
         const text_color = get_contrast_color(bg_color);
 
         cell.style.backgroundColor = bg_color;
