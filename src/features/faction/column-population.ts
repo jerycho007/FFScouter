@@ -270,7 +270,7 @@ export async function apply_ff_columns(membersList: HTMLElement) {
         const text = isEst
           ? extract_bs_estimate_human(data)
           : format_ff_score(data);
-        const bg_color = get_ff_colour(data);
+        let bg_color = get_ff_colour(data);
         if (data.distribution) {
           const highStat = data.distribution.distribution_human.split(' ')[0];
           const highStatPercentage = data.distribution.distribution_human.split(' ')[1];
